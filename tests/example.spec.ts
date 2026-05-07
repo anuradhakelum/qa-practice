@@ -1,18 +1,17 @@
 import { test, expect } from '@playwright/test';
+import { Homepage } from '../pages/homePage';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+let homepage: Homepage;
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+test.beforeEach(async ({page}) => {
+  homepage = new Homepage(page);
+  await homepage.goto();
 });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('has title', async () => {
+  await expect(homepage.page).toHaveTitle("Home Page | QA Practice");
+});
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+test('has icon', async () => {
+  await expect(homepage.logo).toBeVisible();
 });
