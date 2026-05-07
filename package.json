@@ -1,0 +1,23 @@
+{
+  "name": "qa-practice",
+  "version": "1.0.0",
+  "description": "https://www.qa-practice.com",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuradhakelum/qa-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anuradhakelum/qa-practice/issues"
+  },
+  "homepage": "https://github.com/anuradhakelum/qa-practice#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
+  }
+}
